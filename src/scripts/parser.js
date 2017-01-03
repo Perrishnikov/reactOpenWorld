@@ -1,4 +1,4 @@
-export default function parseMonster(dirty, _this){
+function parseMonster(dirty, _this){
     //filters out rows with no values, then returns an array of all monsters
     const title = dirty.properties.title;
     //for each SHEET in SHEETS
@@ -40,3 +40,4 @@ export default function parseMonster(dirty, _this){
         monsters: cleanSheets,
     });
 }
+export default parseMonster;

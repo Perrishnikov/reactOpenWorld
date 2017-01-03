@@ -1,7 +1,7 @@
 /*global gapi*/
 import parseMonster from './parser';
 /* Start ================================================================ */
-export default function start() {
+function start() {
     //need to hold onto this
     const _this = this;
 
@@ -32,3 +32,4 @@ export default function start() {
         console.error('Error: ' + reason.result.error.message);
     });
 }
+export default start;
