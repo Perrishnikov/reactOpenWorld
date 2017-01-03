@@ -1,0 +1,76 @@
+/*Action styles*/
+.container-action {
+    background-color: rgb(238, 145, 98);
+    /*flex*/
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section-action-button {
+    background-color: rgb(238, 145, 98);
+    /*margin: 4px;*/
+    /*child*/
+    /*flex-basis: 58px;*/
+}
+.section-action-title {
+    /*background-color: rgb(139, 142, 4);*/
+    text-align: right;
+    margin-right: 3px;
+    /*child*/
+    /*flex-basis: 58px;*/
+}
+.section-action-window {
+    flex-grow: 1;
+
+    margin-right: 3px;
+    background-color: rgb(236, 200, 106);
+    -webkit-border-radius: 3;
+    -moz-border-radius: 3;
+    border-radius: 3px;
+    height:18px;
+    font-size: 14px;
+    min-width: 60px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    text-transform: uppercase;
+    padding-left: 4px;
+    padding-right: 4px;
+    /*padding-top: 1px;*/
+    /*child*/
+    /*flex-basis: 58px;*/
+}
+span.att {
+    font-style: italic;
+    display: inline;
+}
+.window-items{
+/*margin-top: 3px;*/
+    text-align: center;
+}
+.button {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 3;
+    -moz-border-radius: 3;
+    border-radius: 3px;
+    color: #ffffff;
+    padding: 3px 3px 3px 3px;
+    text-decoration: none;
+    margin-left: 3px;
+    margin-right: 6px;
+}
+.button:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}

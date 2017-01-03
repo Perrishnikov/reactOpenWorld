@@ -1,0 +1,184 @@
+/*@import url("flex.css");*/
+/*@import url("sidebar.css");*/
+@import url("actionStyle.css");
+@import url("resetStyle.css");
+/*vertical screen*/
+/*http://codepen.io/anthonyLukes/pen/DLBeE*/
+/**, *:before, *:after {
+  box-sizing: border-box;
+}*/
+/* Normal Screen */
+body {
+    background-color: linen;
+    font-size: 14px;
+    margin: 0;
+    overflow: hidden; /*prevents bouncing*/
+    padding: 0;
+    text-align: center;
+}
+
+.app-wrap {
+    /*flex container*/
+    height: 100vh; /* needed for proper layout */
+    display: flex;
+    flex-direction: column;
+    /*flex-wrap: nowrap;*/
+    max-width: 640px; /* Note3 width*/
+    /*overflow-x: hidden;*/
+}
+
+.head-wrap {
+    /*flex container*/
+    /*this is a flex item*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 0 auto;
+    background-color: lightblue;
+}
+.body-wrap {
+    /*height: 100%; /* needed for proper layout */
+    /*min-height: 100%;*/
+    display: flex;
+    flex-wrap: wrap;
+    /*margin: -5px;*/
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    align-content: flex-start;
+    /*padding: 3px;*/
+    /*this is a flex item*/
+    /*flex: 0 1 auto;*/
+    /*position: relative;/* need this to position inner content. Makes head and foot stick*/*/
+    /*overflow-y: auto;*/
+}
+.half {
+    flex-basis: 46%;
+    /*width: 50%*/
+}
+.container {
+    margin: 3px;
+    padding: 3px;
+    font-size: 9px;
+    font-family: Arial;
+    -webkit-border-radius: 3;
+    -moz-border-radius: 3;
+    border-radius: 3px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+.monsterMenu{
+    /*this is a flex item*/
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+    margin: auto;
+}
+
+.app-title {
+    /*this is a flex item*/
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.foot-wrap{
+    /*this is a flex item*/
+    background-color: lightblue;
+}
+
+.hidden {
+    display: none;
+    /*visibility: hidden;*/
+}
+
+.past {
+    /*display: inline;*/
+    /*font-size: 10px*/
+}
+
+.current {
+    display: inline;
+    /*visibility: visible;*/
+}
+
+.active {
+    background-color: red;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+}
+
+span {
+    /* Chrome all / Safari all */
+    -webkit-user-select: none;
+    /* Firefox all */
+    -moz-user-select: none;
+    /* IE 10+ */
+    -ms-user-select: none;
+    /* Likely future */
+    user-select: none;
+}
+
+span.att {
+    /*this is a flex item*/
+    /*font-weight: bold;*/
+    /*border: 2px solid blue;*/
+    /*this is a flex container*/
+    /*display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;*/
+}
+
+span.val {
+    /*this is a flex item*/
+    /*margin-top: 4px;
+    font-style: italic;
+    border: 2px solid green;*/
+    /*this is a flex container*/
+    /*display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;*/
+}
+
+div img {
+    padding: 4px;
+    display: block;
+    margin: 0 auto;
+    /*figure out a good height and width*/
+    max-width: 480px;
+    max-height: 720px;
+}
+
+
+/*widescreen*/
+
+@media screen and (min-width: 640px) {
+    body {
+        background-color: lightgreen;
+    }
+    .head-wrap {
+
+    }
+    .selector {
+        font-size: 14px;
+        direction: rtl;
+        margin: 0;
+    }
+    .sheetsTitle {
+        font-size: 28px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip;
+    }
+}

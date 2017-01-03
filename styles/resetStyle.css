@@ -1,0 +1,9 @@
+/*Reset styles*/
+.container-reset {
+    background-color: rgba(240, 165, 127, 0.98);
+    /*flex*/
+    /*display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;*/
+}

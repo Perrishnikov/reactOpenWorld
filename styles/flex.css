@@ -1,0 +1,73 @@
+
+.selector {
+    /*this is a flex item*/
+    align-self: center;
+}
+
+.sheetsTitle {
+    /*this is a flex item*/
+    align-self: center;
+}
+
+.foot-wrap{
+    /*this is a flex item*/
+    flex: 0 0 auto;
+}
+
+ul.box {
+    /*flex container*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul.sub {
+    /*flex item*/
+    /*flex container*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.box>li {
+    /*this is a flex item*/
+    flex: 1 1 60px;
+}
+
+.sub>li {
+    /*this is a flex item*/
+    flex: 1 1 auto;
+}
+
+span.att {
+    /*this is a flex item*/
+    /*this is a flex container*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+span.val {
+    /*this is a flex item*/
+    /*this is a flex container*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/*widescreen*/
+
+@media screen and (min-width: 640px) {
+    .head-wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+    .selector {
+        flex: 0 0 auto;
+    }
+    .sheetsTitle {
+        flex: 0 1 auto;
+    }
+}

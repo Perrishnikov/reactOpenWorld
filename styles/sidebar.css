@@ -1,0 +1,33 @@
+.sidebar {
+    position: absolute;
+
+    width: 220px;
+    background-color: darkblue;
+    height: 100%
+}
+
+.content {
+    display: flex;
+    /*flex-direction: column;*/
+    left: -220px;
+    background: #eee;
+    box-shadow: 0 0 5px rgba(0,0,0,1);
+    transform: translate3d(0,0,0);
+    transition: transform .3s;
+    align-items: stretch;
+    height: 100%
+}
+/**/
+.content.isOpen {
+    transform: translate3d(220px,0,0);
+}
+
+.button {
+    cursor: pointer;
+}
+
+.settButton:before {
+/*.button:before {*/
+    content: '\f0c9';
+    font: 42px fontawesome;
+}
