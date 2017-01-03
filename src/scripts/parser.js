@@ -34,7 +34,7 @@ function parseMonster(dirty, _this){
         console.log('setting localStorage');
         localStorage.setItem('data', JSON.stringify([title, cleanSheets]));
     }
-
+    //must render state regardless of flag
     _this.setState({
         title: title,
         monsters: cleanSheets,
