@@ -3,11 +3,13 @@ import React, {Component} from 'react';
 import start from './scripts/start';
 // import './App.css';
 import './styles/main.css';
+import Header from './classes/Header';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            name: 'Perry',
             settings: {
                 useCache: true,
             },
@@ -15,7 +17,22 @@ class App extends Component {
             monsters: [],
             indexActiveMonster: 0,
         };
+        this.iClicked = this.iClicked.bind(this);
     }
+
+    iClicked(nameIn) {
+        const name = nameIn.target.textContent;
+        const index = this.state.monsters.map(element => {
+            const justTheName = element[0][1][0];
+            return justTheName;
+        }).findIndex(element => {
+            return element === name;
+        });
+        this.setState({
+            indexActiveMonster: index,
+        });
+    }
+
     componentWillMount() {
         /* localStorage - also sets cache after parseMonster() from ./parser.js*/
         if (this.state.settings.useCache && localStorage.length > 0) {
@@ -40,34 +57,11 @@ class App extends Component {
 
     render() {
         return (
-                // <div className="App">{this.state.name}</div>
-                // <div className="App">
-                //     <div className="App-header">
-                //         <img src={logo} className="App-logo" alt="logo"/>
-                //         <h2>{this.state.welcome}</h2>
-                //     </div>
-                //     <p className="App-intro">
-                //         To get started, edit
-                //         <code>src/App.js</code>
-                //         and save to reload.
-                //     </p>
-                // </div>
-            <div className="app-wrap">
-                <div className="head-wrap">
-                    <div className="app-title">
-                        Open World Game
-                    </div>
-                    <button><a id="monsterButton" className="">Select Your Monster</a></button>
-                    <div id="monsterMenu">
-                        {/* class; monster state as props */}
-                        <ul className="monsterMenu">
-                            {this.state.monsters.map((element,index) => {
-                                const name = element[0][1][0];
-                                return  <li key={index}>{name}</li>;
-                            })}
-                        </ul>
-                    </div>
-                </div>
+            <div className='app-wrap'>
+                <Header
+                    monsters={this.state.monsters}
+                    iClicked={this.iClicked}
+                 />
                 <div className="body-wrap"></div>
             </div>
         );
