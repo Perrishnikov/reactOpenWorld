@@ -17,8 +17,10 @@ class Header extends React.Component {
                 <div className="app-title">
                     {this.props.name}'s Open World Game
                 </div>
-                <button id="monsterButton" className="hello" onClick={(e) => this.toggleMenu(e)}>Select Your Monster</button>
-                <div id="monsterMenu" >
+                <button id="monsterButton" className="hello" onClick={(e) => this.toggleMenu(e)}>
+                    Select Your Monster
+                </button>
+                <div id="monsterMenu">
                     <ul className="monsterMenu hidden" ref="target">
                         {this.props.monsters.map(element => {
                             const name = element[0][1][0];
@@ -34,7 +36,7 @@ class Header extends React.Component {
 Header.propTypes = {
     name: React.PropTypes.string,
     monsters: React.PropTypes.array,
-    iClicked: React.PropTypes.func
+    iClicked: React.PropTypes.func,
 };
 
 Header.defaultProps = {

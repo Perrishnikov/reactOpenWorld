@@ -15,21 +15,19 @@ class App extends Component {
             },
             title: '',
             monsters: [],
-            indexActiveMonster: 0,
+            indexActive: -1,
         };
         this.iClicked = this.iClicked.bind(this);
     }
 
-    iClicked(nameIn) {
-        const name = nameIn.target.textContent;
-        const index = this.state.monsters.map(element => {
-            const justTheName = element[0][1][0];
-            return justTheName;
-        }).findIndex(element => {
-            return element === name;
+    iClicked(e) {
+        const name = e.target.textContent;
+        const index = this.state.monsters.findIndex(element => {
+            return element[0][1][0] === name;
+            // return element === name;
         });
         this.setState({
-            indexActiveMonster: index,
+            indexActive: index,
         });
     }
 
@@ -51,8 +49,8 @@ class App extends Component {
         }
     }
     componentDidUpdate(prevProps, prevState){
-        console.log(prevProps);
-        console.log(prevState);
+        // console.log(prevProps);
+        // console.log(prevState);
     }
 
     render() {
