@@ -24,9 +24,9 @@ class App extends Component {
     iClicked(e) {
         const name = e.target.textContent;
         const index = this.state.monsters.findIndex(element => {
-            console.log(name);
             return element[0][1][0] === name;
         });
+        console.log(name);
         this.setState({
             indexActive: index,
         });
@@ -60,8 +60,10 @@ class App extends Component {
                 <Header
                     monsters={this.state.monsters}
                     iClicked={this.iClicked}
-                 />
-                 <Body />
+                />
+                <Body
+                    activeMonster={this.state.monsters[this.state.indexActive]}
+                />
                 <div className="body-wrap"></div>
             </div>
         );
