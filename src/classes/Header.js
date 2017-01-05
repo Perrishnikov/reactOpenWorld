@@ -8,9 +8,8 @@ export class Header extends React.Component {
         };
     }
 
-    toggleMenu(e){
+    toggleMenu(){
         // toggle the UL class="hidden"
-        e.preventDefault();
         const target = this.refs.target.classList;
         if(target.value.includes('hidden')){
             target.remove('hidden');
@@ -19,26 +18,26 @@ export class Header extends React.Component {
         }
     }
 
-    toggleActive(e){
+    hideActive(e){
         // toggle the LI class="active"
         //round up all the list items and remove ACTIVE class
         const children = Array.from(e.target.parentNode.children);
         children.forEach(element => {
             const insideClass = element.classList;
-            if(insideClass.value.includes('active')){
-                insideClass.remove('active');
+            if(insideClass.value.includes('hidden')){
+                insideClass.remove('hidden');
             }
         });
         //set the target's class to ACTIVE
         const target = e.target.classList;
-        target.add('active');
+        target.add('hidden');
     }
 
     handleClick(e){
         const name = e.target.textContent;
         this.props.iClicked(e);
-        this.toggleMenu(e);
-        this.toggleActive(e);
+        this.toggleMenu();
+        this.hideActive(e);
         this.setState({
             monsterName: name,
         });
@@ -50,9 +49,9 @@ export class Header extends React.Component {
                 <div className="app-title">
                     {this.props.name}'s Open World Game
                 </div>
-                <button id="monsterButton" className="hello" onClick={(e) => this.toggleMenu(e)}>
+                <div id="monsterButton" className="hello" onClick={(e) => this.toggleMenu(e)}>
                     {this.state.monsterName}
-                </button>
+                </div>
                 <div id="monsterMenu">
                     <ul className="monsterMenu hidden" ref="target">
                         {this.props.monsters.map(element => {
@@ -61,6 +60,7 @@ export class Header extends React.Component {
                         })}
                     </ul>
                 </div>
+                {/* <div className="rest"></div> clickable div to close menu*/}
             </div>
         );
     }

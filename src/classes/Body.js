@@ -4,8 +4,8 @@ export class Body extends React.Component {
 
     render() {
         return (
-            // <div>{this.props.activeMonster}</div>
-            null
+            <div>{this.props.activeMonster}</div>
+            // null
         );
     }
 }
