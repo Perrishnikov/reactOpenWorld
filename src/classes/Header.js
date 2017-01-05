@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Header extends React.Component {
+export class Header extends React.Component {
     toggleMenu(e){
         e.preventDefault();
         const target = this.refs.target.classList;
@@ -42,5 +42,3 @@ Header.propTypes = {
 Header.defaultProps = {
     name: 'Stranger'
 };
-
-export default Header;

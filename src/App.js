@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 import start from './scripts/start';
 // import './App.css';
 import './styles/main.css';
-import Header from './classes/Header';
+import {Header} from './classes/Header';
+import {Body} from './classes/Body';
 
 class App extends Component {
     constructor(props) {
@@ -23,8 +24,8 @@ class App extends Component {
     iClicked(e) {
         const name = e.target.textContent;
         const index = this.state.monsters.findIndex(element => {
+            console.log(name);
             return element[0][1][0] === name;
-            // return element === name;
         });
         this.setState({
             indexActive: index,
@@ -60,6 +61,7 @@ class App extends Component {
                     monsters={this.state.monsters}
                     iClicked={this.iClicked}
                  />
+                 <Body />
                 <div className="body-wrap"></div>
             </div>
         );
