@@ -2,7 +2,7 @@ function parseMonster(dirty, _this){
     //filters out rows with no values, then returns an array of all monsters
     const title = dirty.properties.title;
     //for each SHEET in SHEETS
-    const cleanSheets = dirty.sheets.map(element => {
+    const monstersData = dirty.sheets.map(element => {
         // change value of DIRTY to specify the rowData
         dirty = element.data[0].rowData;
         //for each ROW in SHEET
@@ -28,16 +28,10 @@ function parseMonster(dirty, _this){
             });
         return clean;
     });
+    // just the names
+    const monstersNames = monstersData.map(element => element[0][1][0]);
 
-    // set localStorage if flag is true
-    if(_this.state.settings.useCache){
-        console.log('setting localStorage');
-        localStorage.setItem('data', JSON.stringify([title, cleanSheets]));
-    }
-    //must render state regardless of flag
-    _this.setState({
-        title: title,
-        monsters: cleanSheets,
-    });
+    _this.returnedFromParser({title, monstersData, monstersNames});
+
 }
 export default parseMonster;
