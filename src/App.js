@@ -1,10 +1,10 @@
 /*global gapi*/
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import start from './scripts/start';
 // import './App.css';
 import './styles/main.css';
-import {Header} from './classes/Header';
-import {Body} from './classes/Body';
+import { Header } from './classes/Header';
+import { Body } from './classes/Body';
 
 class App extends Component {
     constructor(props) {
@@ -18,7 +18,8 @@ class App extends Component {
             title: '',
             monstersNames: [],
             monstersData: [],
-            indexActive: -1,
+            // indexActive: -1,
+            indexActive: 0,
         };
         this.iClicked = this.iClicked.bind(this);
     }
@@ -38,22 +39,21 @@ class App extends Component {
         }
     }
 
-    returnedFromParser(parsedData){
-            // set localStorage if flag is true
-        if(this.state.settings.useCache){
+    returnedFromParser(parsedData) {
+        // set localStorage if flag is true
+        if (this.state.settings.useCache) {
             console.log('setting localStorage');
             console.log(parsedData);
             localStorage.setItem('data', JSON.stringify(parsedData));
         }
-            //must render state regardless of flag
+        //must render state regardless of flag
         this.setState(parsedData);
     }
 
     iClicked(e) {
-        //iClicked is from the monster clicked in the MonsterMenu
+        //iClicked is from the monster clicked from the MonsterMenu
         const name = e.target.textContent;
         const index = this.state.monstersData.findIndex(element => {
-            console.log(element);
             return element[0][1][0] === name;
         });
         this.setState({
@@ -67,11 +67,10 @@ class App extends Component {
                 <Header
                     monsters={this.state.monstersData}
                     iClicked={this.iClicked}
-                />
+                    />
                 <Body
                     activeMonster={this.state.monstersData[this.state.indexActive]}
-                />
-                <div className="body-wrap"></div>
+                    />
             </div>
         );
     }
